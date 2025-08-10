@@ -47,6 +47,14 @@ def handle_message():
             balasan = f"Anda bilang: '{message_text}'. Saya bot sederhana!"
             if "halo" in message_text.lower():
                 balasan = "Halo kembali dari bot!"
+            if "info produk" in message_text:
+                balasan = "Tentu, kami menjual Produk A (Rp 50rb) dan Produk B (Rp 75rb). Anda tertarik yang mana?"
+            elif "jam buka" in message_text:
+                balasan = "Toko kami buka setiap hari dari jam 9 pagi sampai jam 5 sore."
+            elif "terima kasih" in message_text:
+                balasan = "Sama-sama! Senang bisa membantu."
+            else:
+                balasan = f"Maaf, saya belum mengerti maksud dari '{message_text}'. Coba tanya tentang 'info produk' atau 'jam buka'."
 
             send_whatsapp_message(from_number, balasan)
     except Exception as e:
